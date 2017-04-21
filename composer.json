@@ -7,5 +7,12 @@
             "email": "omar.jbara2@gmail.com"
         }
     ],
-    "require": {}
+    "autoload": {
+        "psr-4": {
+            "Linking\\Flashr": "src/"
+        }
+    },
+    "require": {
+        "php": ">= 5.4"
+    }
 }
