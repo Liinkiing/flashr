@@ -7,7 +7,7 @@ use Illuminate\Support\ServiceProvider;
 class FlashrServiceProvider extends ServiceProvider
 {
 
-    protected $defer = true;
+    protected $defer = false;
 
     /**
      * Bootstrap the application services.
@@ -16,7 +16,7 @@ class FlashrServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-
+        $this->loadViewsFrom(__DIR__."/../views", "flashr");
     }
 
     /**
@@ -26,8 +26,6 @@ class FlashrServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->app->singleton('flashr', function() {
-            return new FlashrNotifier($this->app->make('session.store'));
-        });
+        $this->app->singleton('flashr', FlashrNotifier::class);
     }
 }

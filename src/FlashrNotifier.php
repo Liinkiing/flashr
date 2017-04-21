@@ -9,12 +9,13 @@
 namespace Linking\Flashr;
 
 use Illuminate\Contracts\Session\Session;
+use Illuminate\Session\Store;
 use Linking\Flashr\Interfaces\Flashable;
 
 class FlashrNotifier implements Flashable
 {
     /**
-     * @var Session
+     * @var Store
      */
     private $session;
 
@@ -31,40 +32,51 @@ class FlashrNotifier implements Flashable
     /**
      * Display an information message
      * @param $message
-     * @return mixed
+     * @return void
      */
     public function info($message)
     {
-        // TODO: Implement info() method.
+        $this->setMessage($message, "info");
     }
 
     /**
      * Display a success message
      * @param $message
-     * @return mixed
+     * @return void
      */
     public function success($message)
     {
-        // TODO: Implement success() method.
+        $this->setMessage($message, "success");
     }
 
     /**
      * Display a warning message
      * @param $message
-     * @return mixed
+     * @return void
      */
     public function warning($message)
     {
-        // TODO: Implement warning() method.
+        $this->setMessage($message, "warning");
     }
 
     /**
      * Display an error message
      * @param $message
-     * @return mixed
+     * @return void
      */
-    public function error($message)
+    public function danger($message)
     {
-        // TODO: Implement error() method.
+        $this->setMessage($message, "danger");
+    }
+
+    /**
+     * Private function used to set a message in the session
+     * @param $message
+     * @param $type
+     */
+    private function setMessage($message, $type) {
+        $this->session->flush();
+        $this->session->flash('_flashr.type', $type);
+        $this->session->flash('_flashr.message', $message);
     }
 }

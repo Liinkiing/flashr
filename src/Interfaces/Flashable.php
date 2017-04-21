@@ -37,7 +37,7 @@ interface Flashable
      * @param $message
      * @return mixed
      */
-    public function error($message);
+    public function danger($message);
 
 
 }
