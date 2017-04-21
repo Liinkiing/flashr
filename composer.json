@@ -10,7 +10,7 @@
     ],
     "autoload": {
         "psr-4": {
-            "Linking\\Flashr": "src/"
+            "Linking\\Flashr\\": "src/"
         }
     },
     "require": {
