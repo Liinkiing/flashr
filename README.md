@@ -48,6 +48,20 @@ If you're running an older version of Laravel, you can edit the **app.php** file
     ];
 ```
 
+You should also add the Facade, in the file **app.php**, under the 'aliases' key, add
+
+```php
+
+    'aliases' => [
+    
+        // ..
+        'Flashr' => \Linking\Flashr\Facades\Flashr::class,
+        // ..
+    
+    ];
+
+```
+
 #### Usage
 
 Within your controllers, you can do
