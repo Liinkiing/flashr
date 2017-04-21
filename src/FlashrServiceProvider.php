@@ -17,6 +17,9 @@ class FlashrServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->loadViewsFrom(__DIR__."/../views", "flashr");
+        $this->publishes([
+            __DIR__."/../views" => resource_path('views/vendor/flashr')
+        ], 'flashr');
     }
 
     /**
