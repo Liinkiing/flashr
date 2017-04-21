@@ -1,0 +1,11 @@
+{
+    "name": "linking/flashr",
+    "description": "A Laravel package made for displaying flashes messages in a conveniant way",
+    "authors": [
+        {
+            "name": "Omar Jbara",
+            "email": "omar.jbara2@gmail.com"
+        }
+    ],
+    "require": {}
+}
