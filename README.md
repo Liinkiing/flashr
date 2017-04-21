@@ -1,4 +1,4 @@
-<p align="center"><img src="https://lh6.googleusercontent.com/h5yIE_9SA2NbJ1D_FcB-j1eyzy04n8AmTB-TjLNGrAwEzezwDSZ3G4VpbRluRYuBcL3RPEc_KjbUSvw=w1920-h925"></p>
+<p align="center"><img src="http://i.imgur.com/rByiqwS.png"></p>
 
 # Flashr
 ### A laravel package which make printing flashes a breeze!
